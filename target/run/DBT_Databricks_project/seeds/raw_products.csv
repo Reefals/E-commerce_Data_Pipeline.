@@ -1,0 +1,22 @@
+
+    
+    
+    
+    create or replace table `workspace`.`bronze`.`raw_products` (`product_id` string ,`product_name` string ,`category` string ,`price` double )
+    
+    using delta
+  
+    
+    
+    
+    
+    
+  ;
+    -- dbt seed --
+    
+          insert overwrite `workspace`.`bronze`.`raw_products` values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+      
+
+;
+  

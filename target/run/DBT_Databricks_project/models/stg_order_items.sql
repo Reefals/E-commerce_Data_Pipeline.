@@ -1,0 +1,24 @@
+
+  
+  
+  
+  create or replace view `workspace`.`bronze`.`stg_order_items`
+  
+  as (
+    -- Staging: order line items
+with source as (
+    select * from `workspace`.`bronze`.`raw_order_items`
+),
+
+renamed as (
+    select
+        order_item_id,
+        order_id,
+        product_id,
+        cast(quantity as int) as quantity,
+        cast(unit_price as decimal(12, 2)) as unit_price
+    from source
+)
+
+select * from renamed
+  )

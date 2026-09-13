@@ -1,0 +1,11 @@
+customer_id,first_name,last_name,email,country,created_at
+cust_001,Alice,Johnson,alice.j@email.com,US,2024-01-15 10:00:00
+cust_002,Bob,Smith,bob.smith@email.com,UK,2024-02-01 14:30:00
+cust_003,Carol,Williams,carol.w@email.com,US,2024-02-10 09:15:00
+cust_004,David,Brown,david.b@email.com,CA,2024-03-01 11:00:00
+cust_005,Eve,Davis,eve.davis@email.com,US,2024-03-15 16:45:00
+cust_006,Frank,Miller,frank.m@email.com,UK,2024-04-01 08:00:00
+cust_007,Grace,Wilson,grace.w@email.com,US,2024-04-20 12:30:00
+cust_008,Henry,Moore,henry.moore@email.com,DE,2024-05-01 07:00:00
+cust_009,Ivy,Taylor,ivy.t@email.com,US,2024-05-10 15:00:00
+cust_010,Jack,Anderson,jack.a@email.com,UK,2024-06-01 09:30:00

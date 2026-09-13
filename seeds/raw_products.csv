@@ -1,0 +1,11 @@
+product_id,product_name,category,price
+prod_001,Wireless Headphones,Electronics,49.99
+prod_002,Bluetooth Speaker,Electronics,89.50
+prod_003,USB-C Hub,Electronics,78.00
+prod_004,Mechanical Keyboard,Electronics,84.03
+prod_005,Desk Lamp,Home,67.99
+prod_006,Notebook Set,Office,45.00
+prod_007,Monitor Stand,Electronics,124.50
+prod_008,Desk Organizer,Office,30.76
+prod_009,Ergonomic Mouse,Electronics,59.99
+prod_010,Webcam HD,Electronics,89.00

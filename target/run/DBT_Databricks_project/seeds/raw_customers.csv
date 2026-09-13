@@ -1,0 +1,22 @@
+
+    
+    
+    
+    create or replace table `workspace`.`bronze`.`raw_customers` (`customer_id` string ,`first_name` string ,`last_name` string ,`email` string ,`country` string ,`created_at` timestamp )
+    
+    using delta
+  
+    
+    
+    
+    
+    
+  ;
+    -- dbt seed --
+    
+          insert overwrite `workspace`.`bronze`.`raw_customers` values
+          (%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s)
+      
+
+;
+  
