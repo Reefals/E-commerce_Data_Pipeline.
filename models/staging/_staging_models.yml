@@ -1,0 +1,69 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging view of orders. One row per order."
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests: [unique, not_null]
+      - name: customer_id
+        description: "Foreign key to customer"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('scd_customers')
+                field: customer_id
+      - name: order_date
+        description: "Date the order was placed"
+        tests: [not_null]
+      - name: status
+        description: "Order status (e.g. delivered, shipped, processing)"
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['delivered', 'shipped', 'processing', 'returned', 'cancelled']
+      - name: total_amount
+        description: "Total order amount in currency"
+
+  - name: stg_order_items
+    description: "Staging view of order line items. One row per product per order."
+    columns:
+      - name: order_item_id
+        description: "Unique order line identifier"
+        tests: [unique, not_null]
+      - name: order_id
+        description: "Foreign key to order"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_orders')
+                field: order_id
+      - name: product_id
+        description: "Foreign key to product"
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id
+      - name: quantity
+        description: "Quantity ordered"
+        tests: [not_null]
+      - name: unit_price
+        description: "Unit price at time of order"
+
+  - name: stg_products
+    description: "Staging view of products. One row per product."
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests: [unique, not_null]
+      - name: product_name
+        description: "Product display name"
+      - name: category
+        description: "Product category"
+      - name: price
+        description: "Current product price"

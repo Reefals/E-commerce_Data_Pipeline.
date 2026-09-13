@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: int_orders_enriched
+    description: "Orders joined with customers and order-item aggregates. One row per order."
+  - name: int_order_items_with_product
+    description: "Order line items with product and order context. One row per line."

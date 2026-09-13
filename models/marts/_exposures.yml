@@ -1,0 +1,34 @@
+version: 2
+
+exposures:
+  - name: ceo_dashboard
+    type: dashboard
+    description: "CEO weekly revenue and order metrics"
+    owner:
+      name: Data Team
+      email: data@shopflow.com
+    depends_on:
+      - ref('fct_orders')
+      - ref('scd_customers')
+    url: "https://bi.shopflow.com/dashboards/ceo"
+
+  - name: product_analytics
+    type: dashboard
+    description: "Product and category performance"
+    owner:
+      name: Marketing
+      email: marketing@shopflow.com
+    depends_on:
+      - ref('fct_order_items')
+      - ref('dim_products')
+    url: "https://bi.shopflow.com/dashboards/products"
+
+  - name: customer_history
+    type: notebook
+    description: "Customer SCD history for support and analytics"
+    owner:
+      name: Data Team
+      email: data@shopflow.com
+    depends_on:
+      - ref('scd_customers')
+    url: "https://dbc-aef35066-afa2.cloud.databricks.com/notebooks/customer_history"
