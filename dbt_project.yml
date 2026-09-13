@@ -1,0 +1,82 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'DBT_Databricks_project'
+version: '1.0.0'
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'DBT_Databricks_project'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+on-run-start:
+  - "{{ log('Starting DBT_Databricks_project run', info=True) }}"
+on-run-end:
+  - "{{ log('Finished DBT_Databricks_project run', info=True) }}"
+
+vars:
+  project_schema: "DBT_Databricks_project"
+
+models:
+  DBT_Databricks_project:
+    staging:
+      +materialized: view
+      +schema: silver
+    intermediate:
+      +materialized: view
+      +schema: silver
+    marts:
+      +materialized: table
+      +schema: gold
+
+
+
+snapshots:
+  DBT_Databricks_project:
+      +schema: gold
+
+
+seeds:
+  DBT_Databricks_project:
+    +schema: bronze
+    raw_customers:
+      +column_types:
+        customer_id: string
+        first_name: string
+        last_name: string
+        email: string
+        country: string
+        created_at: timestamp
+    raw_orders:
+      +column_types:
+        order_id: string
+        customer_id: string
+        order_date: date
+        status: string
+        total_amount: double
+    raw_order_items:
+      +column_types:
+        order_item_id: string
+        order_id: string
+        product_id: string
+        quantity: int
+        unit_price: double
+    raw_products:
+      +column_types:
+        product_id: string
+        product_name: string
+        category: string
+        price: double
