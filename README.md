@@ -1,5 +1,4 @@
-Welcome to your new dbt project!
-
+## **E-commerce**
 ### Project Overview
 
 This project simulates an **E-commerce business** that manages customers, products, orders, and order items.
