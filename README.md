@@ -35,7 +35,7 @@ The project follows the **Medallion Architecture**:
 
 
 ### Project Structure 
-
+```text
 DBT_Databricks_project/
 │
 ├── models/
