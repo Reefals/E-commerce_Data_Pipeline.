@@ -30,7 +30,6 @@ The project follows the **Medallion Architecture**:
 - Incremental Models
 - Type 2 SCD using dbt Snapshots
 - Data Quality Tests
-- dbt Exposures
 - dbt Documentation
 
 
