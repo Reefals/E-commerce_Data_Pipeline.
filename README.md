@@ -1,4 +1,4 @@
-## **E-commerce Data Pipline**
+## **E-commerce Data Pipeline**
 ### Project Overview
 
 This project simulates an **E-commerce business** that manages customers, products, orders, and order items.
