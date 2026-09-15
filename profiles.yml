@@ -1,0 +1,13 @@
+DBT_Databricks_project:
+  outputs:
+    dev:
+      type: databricks
+      host: "your-host"
+      http_path: "your-http path"
+      catalog: 'workspace'
+      schema: silver
+      token: "your-token"
+      threads: 4
+      connect_timeout: 60
+      connect_retries: 3
+  target: dev
