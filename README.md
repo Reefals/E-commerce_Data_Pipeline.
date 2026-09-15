@@ -1,10 +1,11 @@
-## **E-commerce Data Pipeline**
+
+# E-commerce Data Pipeline
+
 ### Project Overview
 
 This project simulates an **E-commerce business** that manages customers, products, orders, and order items.
 
 Using **dbt** and **Databricks**, the project transforms raw business data into structured and reliable datasets for analytics and reporting, helping the business understand sales, customer, and product performance.
-
 
 ### Architecture
 
@@ -14,26 +15,25 @@ The project follows the **Medallion Architecture**:
 * **Silver:** Cleaned and transformed data
 * **Gold:** Analytics-ready data for reporting and analysis
 
-
-**Data Flow:**
-`CSV → Bronze → Silver → Gold`
-
+**Data Flow:** `CSV → Bronze → Silver → Gold`
 
 ### Main Models
+
 * `fct_orders` — Order-level data
 * `fct_order_items` — Order item-level data
 * `dim_products` — Product information
 * `scd_customers` — Customer history using Type 2 SCD
 
 ### Key Implementations
-- Data Modeling
-- Incremental Models
-- Type 2 SCD using dbt Snapshots
-- Data Quality Tests
-- dbt Documentation
 
+* Data Modeling
+* Incremental Models
+* Type 2 SCD using dbt Snapshots
+* Data Quality Tests
+* dbt Documentation
 
-### Project Structure 
+### Project Structure
+
 ```text
 DBT_Databricks_project/
 │
@@ -49,11 +49,14 @@ DBT_Databricks_project/
 │
 └── dbt_project.yml
 ```
-  
+
 ### Tech Stack
+
 * **dbt**
 * **Databricks**
 * **SQL**
+
+
 
 
 
