@@ -49,7 +49,7 @@ DBT_Databricks_project/
 ├── macros/
 │
 └── dbt_project.yml
-```text
+```
   
 ### Tech Stack
 * **dbt**
